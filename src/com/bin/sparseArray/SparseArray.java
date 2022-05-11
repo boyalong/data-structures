@@ -1,7 +1,9 @@
 package com.bin.sparseArray;
 
 /**
- * 稀疏数组
+ * @Author: boyalong
+ * @Date: 2022/05/10/15:06
+ * @Description: 稀疏数组
  */
 public class SparseArray {
     public static void main(String[] args) {
@@ -22,9 +24,10 @@ public class SparseArray {
         System.out.println("===================================");
 
         //遍历二维数组每有一个非0数sum++
+        //稀疏数组的长度为sum+1
         int sum = 0;
-        for (int i = 0;i < chessArr1.length;i++){
-            for (int j = 0;j < chessArr1.length;j++){
+        for (int i = 0;i < 11;i++){
+            for (int j = 0;j < 11;j++){
                 if(chessArr1[i][j] != 0){
                     sum++;
                 }
@@ -39,8 +42,8 @@ public class SparseArray {
 
         //遍历二维数组，将非0的值传入稀疏数组
         int row = 0;
-        for (int i = 0;i < chessArr1.length;i++){
-            for (int j = 0;j < chessArr1.length;j++){
+        for (int i = 0;i < 11;i++){
+            for (int j = 0;j < 11;j++){
                 if(chessArr1[i][j] != 0){
                     row++;
                     sparseArray[row][0] = i;
