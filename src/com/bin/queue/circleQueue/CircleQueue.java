@@ -1,66 +1,11 @@
-package com.bin.queue;
-
-import java.util.Scanner;
+package com.bin.queue.circleQueue;
 
 /**
  * @Author: boyalong
  * @Date: 2022/05/11/9:22
- * @Description: 环形队列
+ * @Description: 使用数组模拟队列
  */
-public class CircleQueueDemo {
-    public static void main(String[] args) {
-        //创建一个队列
-        CircleQueue queue = new CircleQueue(4);//有效数列为3
-        char key = ' ';     // 用于用户输入
-        Scanner scanner = new Scanner(System.in);
-        boolean loop = true;
-        //输出一个菜单
-        while (loop) {
-            System.out.println("s(show): 显示队列");
-            System.out.println("e(exit): 退出程序");
-            System.out.println("a(add): 添加数据到队列");
-            System.out.println("g(get): 从数列取出数据");
-            System.out.println("h(head): 查看队列头数据");
-            key = scanner.next().charAt(0);
-            switch (key) {
-                case 's':
-                    queue.showQueue();
-                    break;
-                case 'a':
-                    System.out.println("输入一个数");
-                    int value = scanner.nextInt();
-                    queue.addQueue(value);
-                    break;
-                case 'g':
-                    try {
-                        int res = queue.getQueue();
-                        System.out.printf("取出的数据为：%d\n", res);
-                    } catch (Exception e) {
-                        System.out.println(e.getMessage());
-                    }
-                    break;
-                case 'h':
-                    try {
-                        int res = queue.headQueue();
-                        System.out.printf("队列头部值为：%d\n", res);
-                    } catch (Exception e) {
-                        System.out.println(e.getMessage());
-                    }
-                    break;
-                case 'e':
-                    scanner.close();
-                    loop = false;
-                    break;
-                default:
-                    break;
-            }
-        }
-        System.out.println("程序退出");
-    }
-}
-
-//使用数组模拟队列
-class CircleQueue {
+public class CircleQueue {
     private int maxSize;    //最大容量
     private int front;      //队列头
     private int rear;       //队列尾
@@ -132,3 +77,4 @@ class CircleQueue {
         return arr[front];
     }
 }
+
