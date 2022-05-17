@@ -1,11 +1,12 @@
-package com.bin.linkedList.singleLinkedList;
+package com.bin.linkedList.doubleLinkedList;
+
 
 /**
  * @Author: boyalong
- * @Date: 2022/05/12/22:40
- * @Description: 定义 SingleLinkedList  管理元素
+ * @Date: 2022/05/16/17:20
+ * @Description:
  */
-public class SingleLinkedList {
+public class DoubleLinkList {
     //初始化一个Head头节点，内容为空不能动
     private HeroNode head = new HeroNode(0, "", "");
 
@@ -14,12 +15,31 @@ public class SingleLinkedList {
         return head;
     }
 
-    //添加节点到单项链表
-    //1.当找到这个链表的最后节点时
-    //2.将这个节点的next指向新的节点
+    /**
+     * 遍历双向链表，同单向链表一样
+     */
+    public void list() {
+        //判断是否为空
+        if (head.next == null) {
+            System.out.println("链表为空");
+            return;
+        }
+        //头节点不能为空，定义一个辅助变量来遍历
+        HeroNode temp = head.next;
+        while (true) {
+            //判断是否在最后
+            if (temp == null) {
+                break;
+            }
+            //输出节点信息
+            System.out.println(temp);
+            //将节点后移动一位,输出下一个元素信息
+            temp = temp.next;
+        }
+    }
 
     /**
-     * 直接插入到单链表尾
+     * 添加一个节点到链表尾
      * @param heroNode
      */
     public void add(HeroNode heroNode) {
@@ -36,6 +56,7 @@ public class SingleLinkedList {
         }
         //将最后的节点的next指向新节点
         temp.next = heroNode;
+        heroNode.pre = temp;
     }
 
     /**
@@ -66,33 +87,10 @@ public class SingleLinkedList {
         } else {
             //插入到链表中,在temp后面
             heroNode.next = temp.next;      //将原先的temp.next赋给heroNode.next
+            heroNode.pre = temp.pre;
             temp.next = heroNode;       //将heroNode的属性覆盖temp.next
         }
     }
-
-    /**
-     * 遍历链表
-     */
-    public void list() {
-        //判断是否为空
-        if (head.next == null) {
-            System.out.println("链表为空");
-            return;
-        }
-        //头节点不能为空，定义一个辅助变量来遍历
-        HeroNode temp = head.next;
-        while (true) {
-            //判断是否在最后
-            if (temp == null) {
-                break;
-            }
-            //输出节点信息
-            System.out.println(temp);
-            //将节点后移动一位,输出下一个元素信息
-            temp = temp.next;
-        }
-    }
-
 
     /**
      * 改
@@ -126,71 +124,36 @@ public class SingleLinkedList {
     }
 
     /**
-     * 删 
+     * 删
      * @param no
      */
     public void del(int no){
-        HeroNode temp = head;
+
+        //判断当前链表是否为空
+        if(head.next == null){
+            System.out.println("当前链表为空");
+            return;
+        }
+
+        HeroNode temp = head.next;
         boolean flag = false;
         while(true){
-            if(temp.next == null){
+            if(temp == null){
                 break;
             }
-            if(temp.next.no == no){
+            if(temp.no == no){
                 flag = true;
                 break;
             }
             temp = temp.next;
         }
         if (flag){
-             temp.next = temp.next.next;
+            temp.pre.next = temp.next;
+            if(temp.next != null){      //最后一个节点不需要执这步
+                temp.next.pre = temp.pre;
+            }
         }else {
             System.out.printf("要删除的节点%d不存在",no);
         }
     }
-
-    /**
-     * 查询单链表有效节点个数
-     * @param head
-     * @return
-     */
-    public static int getLength(HeroNode head)  {
-        if(head.next == null){
-            return 0;
-        }
-        int length = 0;
-        HeroNode cur = head.next;
-        while(cur != null){
-            length++;
-            cur = cur.next;
-        }
-        return length;
-    }
-
-    /**
-     * 查询倒数第index的节点
-     * @param head
-     * @param index
-     * @return
-     */
-    public static HeroNode  findLastIndexNode(HeroNode head, int index){
-        //如果判断链表为空，返回为null
-        if(head.next == null){
-            return null;
-        }
-        //返回链表长度
-        int size = getLength(head);
-        //第二次遍历倒数的第K个节点，size - index
-        if(index <= 0 || index > size){
-            return null;
-        }
-        HeroNode cur = head.next;
-        for (int i = 0; i < size - index; i++) {
-            cur = cur.next;
-        }
-        return cur;
-    }
-
-
 }
-

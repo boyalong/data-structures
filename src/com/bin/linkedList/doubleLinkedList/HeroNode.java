@@ -1,8 +1,8 @@
-package com.bin.linkedList.singleLinkedList;
+package com.bin.linkedList.doubleLinkedList;
 
 /**
  * @Author: boyalong
- * @Date: 2022/05/12/22:37
+ * @Date: 2022/05/16/17:16
  * @Description:
  */
 public class HeroNode {
@@ -11,6 +11,7 @@ public class HeroNode {
         public String name;
         public String nikeName;
         public HeroNode next;       //指向下一个节点，默认为null
+        public HeroNode pre;       //指向前一个节点，默认为null
 
         //构造器
         public HeroNode(int no, String name, String nikeName) {

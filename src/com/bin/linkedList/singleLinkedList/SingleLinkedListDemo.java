@@ -32,8 +32,13 @@ public class SingleLinkedListDemo {
         //修改节点代码
         HeroNode newHeroNode = new HeroNode(2,"卢老板","麒麟哥哥");
         singleLinkedList.update(newHeroNode);
+        //删
         singleLinkedList.del(1);
-        // 测试一下单链表的反转功能
+        // 查询遍历
         singleLinkedList.list();
+        System.out.println("有效节点个数" + singleLinkedList.getLength(singleLinkedList.getHead()));
+        //查询倒数第K个节点
+        HeroNode res = singleLinkedList.findLastIndexNode(singleLinkedList.getHead(),1);
+        System.out.printf("倒数第1个节点" + res);
     }
 }
