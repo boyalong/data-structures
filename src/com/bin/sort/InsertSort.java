@@ -4,10 +4,10 @@ import java.util.Arrays;
 
 /**
  * @Author: boyalong
- * @Date: 2022/05/21/14:08
- * @Description: 选择排序
+ * @Date: 2022/05/22/20:26
+ * @Description:    插入排序
  */
-public class SelectionSort {
+public class InsertSort {
     public static void main(String[] args) {
         //创建一个数组并为数组赋值
         int[] array = new int[10000];
@@ -21,7 +21,7 @@ public class SelectionSort {
 //       统计方法执行时间，显示为秒级别
         long startTime = System.currentTimeMillis();
 
-        selectSort(array);  //运行冒泡排序
+        insertSort(array);  //运行冒泡排序
 
         long endTime = System.currentTimeMillis();
         float useTime = (float) (endTime-startTime)/1000;
@@ -31,27 +31,19 @@ public class SelectionSort {
         System.out.println("执行时间："+useTime+"s" );
     }
 
-
-    public static void selectSort(int[] array) {
-
-        for( int i = 0; i < array.length; i++) {
-            int min = i;
-
-            // 找出"a[i+1] ... a[n]"之间的最小元素，并赋值给min。
-            for (int j = i + 1; j < array.length; j++) {
-                if (array[j] < array[min]){
-                    min = j;   //下标
+    public static void insertSort(int[] array){
+        for (int i = 1; i < array.length; i++) {
+            int temp = array[i];
+            int j = i - 1;
+            while (j >= 0){
+                if(array[j] > temp){
+                    array[j + 1] = array[j];
+                }else {
+                    break;
                 }
+                j--;
             }
-
-            // 若min!=i，则交换 a[i] 和 a[min]。
-            // 交换之后，保证了a[0] ... a[i] 之间的元素是有序的。
-            if (min != i) {
-                int tmp = array[i];
-                array[i] = array[min];
-                array[min] = tmp;
-            }
+            array[j + 1] = temp;
         }
     }
 }
-
