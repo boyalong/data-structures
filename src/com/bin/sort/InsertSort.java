@@ -21,7 +21,7 @@ public class InsertSort {
 //       统计方法执行时间，显示为秒级别
         long startTime = System.currentTimeMillis();
 
-        insertSort(array);  //运行冒泡排序
+        insertSort(array);
 
         long endTime = System.currentTimeMillis();
         float useTime = (float) (endTime-startTime)/1000;
