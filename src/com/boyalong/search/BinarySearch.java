@@ -10,10 +10,11 @@ import java.util.List;
  */
 public class BinarySearch {
     public static void main(String[] args) {
-        int[] array = {1,3,3,5,6,7,8,9};
+        int[] array = {1,2,3,4,5,6,7,8};
 
-        int i = binarySearch(array, 0, array.length - 1, 10);
+        int i = binarySearch(array, 0, array.length - 1, 5);
         List<Integer> j = binarySearch2(array, 0, array.length - 1, 3);
+        int x = binarySearch3(array, 0, array.length - 1, 3);
         System.out.println(i);
     }
 
@@ -46,6 +47,14 @@ public class BinarySearch {
 
     }
 
+    /**
+     * 查找多个数
+     * @param array
+     * @param left
+     * @param right
+     * @param findVal
+     * @return
+     */
     public static List<Integer> binarySearch2(int[] array,int left,int right, int findVal){
 
         //当left>right时，说明递归整个数组，但没有找到
@@ -99,15 +108,15 @@ public class BinarySearch {
      * @param findVal
      * @return
      */
-    public int binarySearch3(int[] array, int left ,int right,int findVal) {
+    public static int binarySearch3(int[] array, int left ,int right,int findVal) {
 
         while (left <= right) {
 
             int mid = left + (right - left) / 2;
 
-            if (array[mid] > findVal){
+            if (findVal < array[mid]){
                 right = mid - 1;
-            }else if (array[mid] < findVal){
+            }else if (findVal > array[mid]){
                 left = mid + 1;
             }else {
                 return mid;
