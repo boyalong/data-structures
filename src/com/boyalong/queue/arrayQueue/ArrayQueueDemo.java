@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 /**
  * @Author: boyalong
- * @Date: 2022/05/11/9:46
  * @Description: 普通队列测试
  */
 public class ArrayQueueDemo {

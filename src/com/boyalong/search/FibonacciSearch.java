@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 /**
  * @Author: boyalong
- * @Date: 2022/05/26/16:09
  * @Description: 斐波那契查找
  */
 public class FibonacciSearch {

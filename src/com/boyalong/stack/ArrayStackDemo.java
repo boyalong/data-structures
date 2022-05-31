@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 /**
  * @Author: boyalong
- * @Date: 2022/05/18/10:15
  * @Description:
  */
 public class ArrayStackDemo {

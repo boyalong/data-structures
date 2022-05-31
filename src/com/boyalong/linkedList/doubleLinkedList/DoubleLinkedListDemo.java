@@ -2,7 +2,6 @@ package com.boyalong.linkedList.doubleLinkedList;
 
 /**
  * @Author: boyalong
- * @Date: 2022/05/16/20:03
  * @Description: 双向链表的测试
  */
 public class DoubleLinkedListDemo {

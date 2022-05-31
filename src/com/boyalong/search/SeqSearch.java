@@ -2,7 +2,6 @@ package com.boyalong.search;
 
 /**
  * @Author: boyalong
- * @Date: 2022/05/23/20:11
  * @Description:    线性查找
  */
 public class SeqSearch {

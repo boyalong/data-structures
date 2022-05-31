@@ -2,7 +2,6 @@ package com.boyalong.queue.circleQueue;
 
 /**
  * @Author: boyalong
- * @Date: 2022/05/11/9:22
  * @Description: 使用数组模拟队列
  */
 public class CircleQueue {

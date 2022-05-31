@@ -2,7 +2,6 @@ package com.boyalong.linkedList.singleLinkedList;
 
 /**
  * @Author: boyalong
- * @Date: 2022/05/12/22:40
  * @Description: 定义 SingleLinkedList  管理元素
  */
 public class SingleLinkedList {

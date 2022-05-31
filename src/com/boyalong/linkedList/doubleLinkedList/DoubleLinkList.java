@@ -3,7 +3,6 @@ package com.boyalong.linkedList.doubleLinkedList;
 
 /**
  * @Author: boyalong
- * @Date: 2022/05/16/17:20
  * @Description:
  */
 public class DoubleLinkList {

@@ -2,7 +2,6 @@ package com.boyalong.linkedList.singleLinkedList;
 
 /**
  * @Author: boyalong
- * @Date: 2022/05/12/23:02
  * @Description: 单链链表测试
  */
 public class SingleLinkedListDemo {

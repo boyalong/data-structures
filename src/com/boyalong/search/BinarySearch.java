@@ -5,7 +5,6 @@ import java.util.List;
 
 /**
  * @Author: boyalong
- * @Date: 2022/05/23/19:09
  * @Description:    二分查找（要求为有序列表）
  */
 public class BinarySearch {

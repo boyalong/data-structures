@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 /**
  * @Author: boyalong
- * @Date: 2022/05/11/9:57
  * @Description: 环形队列
  */
 public class CircleQueueDemo {

@@ -2,7 +2,6 @@ package com.boyalong.linkedList.singleLinkedList;
 
 /**
  * @Author: boyalong
- * @Date: 2022/05/12/22:37
  * @Description:
  */
 public class HeroNode {

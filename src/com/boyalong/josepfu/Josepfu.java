@@ -2,7 +2,6 @@ package com.boyalong.josepfu;
 
 /**
  * @Author: boyalong
- * @Date: 2022/05/17/17:10
  * @Description: 约瑟夫环
  */
 public class Josepfu {

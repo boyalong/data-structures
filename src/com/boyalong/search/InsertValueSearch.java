@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 /**
  * @Author: boyalong
- * @Date: 2022/05/26/11:13
  * @Description:    插值查找
  */
 public class InsertValueSearch {
