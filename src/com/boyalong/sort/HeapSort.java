@@ -1,4 +1,4 @@
-package com.boyalong.tree;
+package com.boyalong.sort;
 
 import java.util.Arrays;
 
@@ -49,10 +49,9 @@ public class HeapSort {
             adjustHeap(arr, i, arr.length);
         }
 
-        /*
-		 * 2).将堆顶元素与末尾元素交换，将最大元素"沉"到数组末端;
-　　			3).重新调整结构，使其满足堆定义，然后继续交换堆顶元素与当前末尾元素，反复执行调整+交换步骤，直到整个序列有序。
-		 */
+
+//      将堆顶元素与末尾元素交换，将最大元素"沉"到数组末端;
+//　　	重新调整结构，使其满足堆定义，然后继续交换堆顶元素与当前末尾元素，反复执行调整+交换步骤，直到整个序列有序。
         for(int j = arr.length-1;j >0; j--) {
             //交换
             temp = arr[j];
@@ -63,7 +62,6 @@ public class HeapSort {
     }
 
     //将一个数组(二叉树), 调整成一个大顶堆
-
     /**
      * 功能： 完成 将 以 i 对应的非叶子结点的树调整成大顶堆
      * 举例  int arr[] = {4, 6, 8, 5, 9}; => i = 1 => adjustHeap => 得到 {4, 9, 8, 5, 6}
