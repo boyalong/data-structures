@@ -33,6 +33,7 @@ public class HeapSort {
         System.out.println("执行时间：" + useTime + "s");
     }
 
+    //编写一个堆排序的方法
     public static void headSort(int arr[]) {
         int temp = 0;
         System.out.println("堆排序!!");
